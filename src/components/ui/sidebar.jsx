@@ -305,10 +305,10 @@ function Sidebar({
             <div
                 data-slot="sidebar-container"
                 className={cn(
-                    "fixed inset-y-0 z-10 hidden h-svh transition-[left,right,width] duration-200 ease-linear md:flex",
+                    "fixed inset-y-0 hidden h-svh transition-[left,right,width] duration-200 ease-linear md:flex",
                     side === "left"
-                        ? "left-0 w-(--sidebar-width) group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"
-                        : "right-0 w-(--right-sidebar-width) group-data-[collapsible=offcanvas]:right-[calc(var(--right-sidebar-width)*-1)]",
+                        ? "left-0 z-10 w-(--sidebar-width) group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"
+                        : "right-0 z-50 w-(--right-sidebar-width) group-data-[collapsible=offcanvas]:right-[calc(var(--right-sidebar-width)*-1)]",
                     // Adjust the padding for floating and inset variants.
                     variant === "floating" || variant === "inset"
                         ? side === "right"
