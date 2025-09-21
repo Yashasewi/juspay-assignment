@@ -9,17 +9,17 @@ import { userAvatars } from "@/data/ordersData";
 const getStatusColor = (status) => {
     switch (status) {
         case "In Progress":
-            return "text-blue-600 bg-blue-100 dark:text-blue-400 dark:bg-blue-900/20";
+            return "text-[var(--status-progress-text)]";
         case "Complete":
-            return "text-green-600 bg-green-100 dark:text-green-400 dark:bg-green-900/20";
+            return "text-[var(--status-complete-text)]";
         case "Pending":
-            return "text-yellow-600 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/20";
+            return "text-[var(--status-pending-text)]";
         case "Approved":
-            return "text-emerald-600 bg-emerald-100 dark:text-emerald-400 dark:bg-emerald-900/20";
+            return "text-[var(--status-approved-text)]";
         case "Rejected":
-            return "text-red-600 bg-red-100 dark:text-red-400 dark:bg-red-900/20";
+            return "text-[var(--status-rejected-text)]";
         default:
-            return "text-gray-600 bg-gray-100 dark:text-gray-400 dark:bg-gray-900/20";
+            return "text-[var(--text-secondary)]";
     }
 };
 

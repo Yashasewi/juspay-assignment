@@ -12,32 +12,28 @@ const notificationsData = [
     {
         id: 1,
         icon: Bug,
-        bgColor: "bg-blue-100",
-        iconColor: "text-blue-600",
+        bgColor: "bg-[var(--notification-bug)]",
         message: "You have a bug that needs to be fixed.",
         timestamp: "Just now",
     },
     {
         id: 2,
         icon: User,
-        bgColor: "bg-indigo-100",
-        iconColor: "text-indigo-600",
+        bgColor: "bg-[var(--notification-other)]",
         message: "New user registered",
         timestamp: "59 minutes ago",
     },
     {
         id: 3,
         icon: Bug,
-        bgColor: "bg-blue-100",
-        iconColor: "text-blue-600",
+        bgColor: "bg-[var(--notification-bug)]",
         message: "You have a bug that needs to be fixed.",
         timestamp: "12 hours ago",
     },
     {
         id: 4,
         icon: Radio,
-        bgColor: "bg-indigo-100",
-        iconColor: "text-indigo-600",
+        bgColor: "bg-[var(--notification-other)]",
         message: "Andi Lane subscribed to you",
         timestamp: "Today, 11:59 AM",
     },
@@ -46,7 +42,9 @@ const notificationsData = [
 const Notification = () => {
     return (
         <SidebarGroup>
-            <SidebarGroupLabel className="font-semibold text-sm mb-2">Notifications</SidebarGroupLabel>
+            <SidebarGroupLabel className="font-semibold text-sm mb-2">
+                Notifications
+            </SidebarGroupLabel>
             <SidebarMenu className="gap-2">
                 {notificationsData.map((notification) => {
                     const IconComponent = notification.icon;
@@ -59,9 +57,7 @@ const Notification = () => {
                                 <div
                                     className={`flex items-center justify-center w-8 h-8 rounded-lg ${notification.bgColor} flex-shrink-0`}
                                 >
-                                    <IconComponent
-                                        className={`w-4 h-4 ${notification.iconColor}`}
-                                    />
+                                    <IconComponent className="w-4 h-4 text-foreground dark:text-background" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <div className="text-sm text-sidebar-foreground leading-tight truncate">

@@ -124,20 +124,20 @@ export function DataTable({ columns, data }) {
 
     return (
         <div className="w-full space-y-4">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-primary-foreground rounded-lg p-3 sm:p-2 gap-3 sm:gap-0">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-secondary rounded-lg p-3 sm:p-2 gap-3 sm:gap-0">
                 {/* Left side - Action buttons */}
                 <div className="flex items-center gap-2 order-2 sm:order-1">
                     <Button
                         variant="ghost"
                         size="sm"
-                        className="h-8 w-8 p-0 hover:bg-white/60"
+                        className="h-8 w-8 p-0 hover:bg-accent"
                         onClick={() => {
                             // Add order functionality - could open a modal or navigate
                             console.log("Add order clicked");
                         }}
                         title="Add Order"
                     >
-                        <Plus className="h-5 w-5 text-[#1C1C1C]" />
+                        <Plus className="h-5 w-5 text-[#1C1C1C] dark:text-white" />
                     </Button>
 
                     <DropdownMenu>
@@ -145,10 +145,10 @@ export function DataTable({ columns, data }) {
                             <Button
                                 variant="ghost"
                                 size="sm"
-                                className="h-8 w-8 p-0 hover:bg-white/60"
+                                className="h-8 w-8 p-0 hover:bg-white/60 dark:hover:bg-white/10"
                                 title="Filter"
                             >
-                                <Filter className="h-5 w-5 text-[#1C1C1C]" />
+                                <Filter className="h-5 w-5 text-[#1C1C1C] dark:text-white" />
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="start" className="w-56">
@@ -203,10 +203,10 @@ export function DataTable({ columns, data }) {
                             <Button
                                 variant="ghost"
                                 size="sm"
-                                className="h-8 w-8 p-0 hover:bg-white/60"
+                                className="h-8 w-8 p-0 hover:bg-white/60 dark:hover:bg-white/10"
                                 title="Sort & View Columns"
                             >
-                                <ArrowUpDown className="h-5 w-5 text-[#1C1C1C]" />
+                                <ArrowUpDown className="h-5 w-5 text-[#1C1C1C] dark:text-white" />
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="start" className="w-56">
@@ -242,12 +242,12 @@ export function DataTable({ columns, data }) {
 
                 {/* Right side - Search */}
                 <div className="relative order-1 sm:order-2 w-full sm:w-auto">
-                    <div className="flex items-center bg-white/40 border border-[#1C1C1C]/10 rounded-lg px-2 py-1 gap-1 w-full sm:w-auto">
+                    <div className="flex items-center bg-white/40 dark:bg-[rgba(28,28,28,0.4)] border border-[#1C1C1C]/10 dark:border-white/10 rounded-lg px-2 py-1 gap-1 w-full sm:w-auto">
                         <Search
                             className={`h-4 w-4 ${
                                 globalFilter
-                                    ? "text-[#1C1C1C]/60"
-                                    : "text-[#1C1C1C]/20"
+                                    ? "text-[#1C1C1C]/60 dark:text-white/60"
+                                    : "text-[#1C1C1C]/20 dark:text-white/20"
                             }`}
                         />
                         <Input
@@ -256,9 +256,9 @@ export function DataTable({ columns, data }) {
                             onChange={(event) =>
                                 setSearchValue(event.target.value)
                             }
-                            className="border-0 bg-transparent text-sm placeholder:text-[#1C1C1C]/20 focus-visible:ring-0 focus-visible:ring-offset-0 h-auto p-0 w-full sm:w-[116px]"
+                            className="border-0 placeholder:bg-transparent text-sm placeholder:text-[#1C1C1C]/20 dark:placeholder:text-white/20 focus-visible:ring-0 focus-visible:ring-offset-0 h-auto p-0 w-full sm:w-[116px]"
                         />
-                        <span className="text-sm text-[#1C1C1C]/20 opacity-0 hidden sm:inline">
+                        <span className="text-sm text-[#1C1C1C]/20 dark:text-white/20 opacity-0 hidden sm:inline">
                             ⌘/
                         </span>
                     </div>
@@ -273,7 +273,6 @@ export function DataTable({ columns, data }) {
                     {globalFilter && ` for "${globalFilter}"`}
                 </div>
             )}
-
 
             <div className="overflow-x-auto rounded-md border">
                 <Table className="min-w-[400px]">

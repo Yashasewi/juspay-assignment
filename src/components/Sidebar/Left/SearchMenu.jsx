@@ -161,7 +161,7 @@ export function CommandMenu() {
                                                 )
                                             }
                                         >
-                                            <IconComponent className="mr-2 h-4 w-4" />
+                                            <IconComponent className="mr-2 h-4 w-4 text-primary" />
                                             <span>{item.title}</span>
                                         </CommandItem>
                                     );
@@ -182,7 +182,7 @@ export function CommandMenu() {
                                                 )
                                             }
                                         >
-                                            <IconComponent className="mr-2 h-4 w-4" />
+                                            <IconComponent className="mr-2 h-4 w-4 text-primary " />
                                             <span>{item.title}</span>
                                         </CommandItem>
                                     );
@@ -208,7 +208,7 @@ export function CommandMenu() {
                                                 )
                                             }
                                         >
-                                            <IconComponent className="mr-2 h-4 w-4" />
+                                            <IconComponent className="mr-2 h-4 w-4 text-primary" />
                                             <span>{item.title}</span>
                                             <span className="ml-auto text-xs text-muted-foreground">
                                                 {item.category}

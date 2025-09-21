@@ -45,11 +45,11 @@ const chartData = [
 const chartConfig = {
     actual: {
         label: "Actual",
-        color: "#60a5fa",
+        color: "var(--chart-blue)",
     },
     projected: {
         label: "Projected",
-        color: "#2563eb",
+        color: "var(--chart-blue-secondary)",
     },
 };
 

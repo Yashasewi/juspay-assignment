@@ -100,11 +100,11 @@ export default function RevenueChart({ className }) {
                 <Separator orientation="vertical" className="h-2" />
                 <CardDescription className="flex items-center gap-12 w-fit">
                     <div className="flex items-center gap-2">
-                        <span className="size-2 rounded-full bg-black" />
+                        <span className="size-2 rounded-full bg-[var(--chart-1)]" />
                         <span>Current Week $58,211</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <span className="size-2 rounded-full bg-black" />
+                    <span className="size-2 rounded-full bg-[var(--chart-2)]" />
                         <span>Previous Week $68,768</span>
                     </div>
                 </CardDescription>

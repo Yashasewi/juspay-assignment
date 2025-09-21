@@ -12,28 +12,28 @@ export default function Dashboard() {
             value: "3,781",
             trend: "up",
             trendValue: "+11.01%",
-            bgColor: "bg-blue-50",
+            cardType: "customers",
         },
         {
             title: "Orders",
             value: "1,219",
             trend: "down",
             trendValue: "-0.03%",
-            bgColor: "",
+            cardType: "orders",
         },
         {
             title: "Revenue",
             value: "$695",
             trend: "up",
             trendValue: "+15.03%",
-            bgColor: "",
+            cardType: "revenue",
         },
         {
             title: "Growth",
             value: "30.1%",
             trend: "up",
             trendValue: "+6.08%",
-            bgColor: "bg-slate-100",
+            cardType: "growth",
         },
     ];
 
@@ -47,8 +47,8 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 md:grid-cols-1 gap-8 w-full">
                 <div className="flex flex-col md:flex-row gap-6 w-full">
                     <div className="grid grid-cols-2 justify-between gap-6 md:gap-y-8 md:gap-x-8 w-full md:w-[50%]">
-                        {metricsData.map((metric) => (
-                            <MetricsCard {...metric} />
+                        {metricsData.map((metric, index) => (
+                            <MetricsCard key={index} {...metric} />
                         ))}
                     </div>
                     <ProjectionsChart className="w-full md:w-[50%]" />

@@ -13,7 +13,7 @@ const RevenueByLocation = ({ className }) => {
     return (
         <Card className={cn("h-full flex flex-col", className)}>
             <CardHeader className="">
-                <CardTitle className="text-sm font-semibold text-gray-900">
+                <CardTitle className="text-sm font-semibold">
                     Revenue by Location
                 </CardTitle>
             </CardHeader>
@@ -32,17 +32,20 @@ const RevenueByLocation = ({ className }) => {
                     {locations.map((location, index) => (
                         <div key={index} className="space-y-1">
                             <div className="flex items-center justify-between">
-                                <span className="text-xs text-gray-900 font-normal">
+                                <span className="text-xs  font-normal">
                                     {location.name}
                                 </span>
-                                <span className="text-xs text-gray-900 font-normal">
+                                <span className="text-xs  font-normal">
                                     {location.value}
                                 </span>
                             </div>
-                            <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                            <div className="w-full h-1 bg-border rounded-full overflow-hidden">
                                 <div
-                                    className="h-full bg-blue-400 rounded-full transition-all duration-500"
-                                    style={{ width: `${location.percentage}%` }}
+                                    className="h-full rounded-full transition-all duration-500"
+                                    style={{
+                                        width: `${location.percentage}%`,
+                                        backgroundColor: "var(--chart-blue)",
+                                    }}
                                 />
                             </div>
                         </div>

@@ -20,10 +20,10 @@ import { cn } from "@/lib/utils";
 export const description = "A donut chart showing total sales by channel";
 
 const chartData = [
-    { channel: "direct", amount: 300.56, fill: "#1C1C1C" },
-    { channel: "affiliate", amount: 135.18, fill: "#BAEDBD" },
-    { channel: "sponsored", amount: 154.02, fill: "#95A4FC" },
-    { channel: "email", amount: 48.96, fill: "#B1E3FF" },
+    { channel: "direct", amount: 300.56, fill: "var(--chart-1)" },
+    { channel: "email", amount: 48.96, fill: "var(--chart-5)" },
+    { channel: "sponsored", amount: 154.02, fill: "var(--chart-3)" },
+    { channel: "affiliate", amount: 135.18, fill: "var(--chart-4)" },
 ];
 
 const chartConfig = {
@@ -32,29 +32,29 @@ const chartConfig = {
     },
     direct: {
         label: "Direct",
-        color: "#1C1C1C",
+        color: "var(--chart-1)",
     },
     affiliate: {
         label: "Affiliate",
-        color: "#BAEDBD",
+        color: "var(--chart-4)",
     },
     sponsored: {
         label: "Sponsored",
-        color: "#95A4FC",
+        color: "var(--chart-3)",
     },
     email: {
         label: "E-mail",
-        color: "#B1E3FF",
+        color: "var(--chart-5)",
     },
 };
 
 export default function TotalSalesChart({ className }) {
     return (
         <Card
-            className={cn(`flex flex-col w-full p-6 bg-[#F7F9FB]`, className)}
+            className={cn(`flex flex-col w-full p-6`, className)}
         >
             <CardHeader className="items-center px-0">
-                <CardTitle className="text-sm font-semibold text-[#1C1C1C]">
+                <CardTitle className="text-sm font-semibold">
                     Total Sales
                 </CardTitle>
             </CardHeader>
@@ -95,7 +95,7 @@ export default function TotalSalesChart({ className }) {
                                         className="w-4 h-4 rounded-full"
                                         style={{ backgroundColor: item.fill }}
                                     />
-                                    <span className="text-xs text-[#1C1C1C] capitalize">
+                                    <span className="text-xs capitalize">
                                         {item.channel === "email"
                                             ? "E-mail"
                                             : item.channel === "affiliate"
@@ -105,7 +105,7 @@ export default function TotalSalesChart({ className }) {
                                             : "Direct"}
                                     </span>
                                 </div>
-                                <span className="text-xs text-[#1C1C1C] font-medium">
+                                <span className="text-xs  font-medium">
                                     ${item.amount.toFixed(2)}
                                 </span>
                             </div>
