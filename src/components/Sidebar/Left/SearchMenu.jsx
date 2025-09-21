@@ -75,7 +75,7 @@ const navigationData = [
     { title: "Security", category: "Account", icon: Lock },
 ];
 
-export function CommandMenu() {
+export default function SearchMenu() {
     const [open, setOpen] = React.useState(false);
 
     // Handle keyboard shortcut
@@ -222,7 +222,7 @@ export function CommandMenu() {
                         <CornerDownLeft className="mr-1 h-3 w-3" />
                         to select
                         <kbd className="ml-auto mr-1 pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs font-medium text-muted-foreground opacity-100">
-                            <span className="text-xs">⌘</span>K
+                            <span className="text-xs">⌘</span>/
                         </kbd>
                         to toggle
                     </div>

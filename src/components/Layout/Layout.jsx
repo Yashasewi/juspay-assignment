@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import LeftSidebar from "@/components/Sidebar/Left/LeftSidebar";
-import { Bell, History, PanelRight } from "lucide-react";
+import { Bell, History, PanelRight, Search } from "lucide-react";
 import {
     SidebarInset,
     SidebarProvider,
@@ -8,7 +8,7 @@ import {
     RightSidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Star } from "lucide-react";
-import { CommandMenu } from "@/components/Sidebar/Left/SearchMenu";
+import SearchMenu from "@/components/Sidebar/Left/SearchMenu";
 import { ModeToggle } from "@/components/Theme/ThemeToggle";
 import RightSidebar from "@/components/Sidebar/Right/RightSidebar";
 import { DynamicBreadcrumb } from "@/components/Navigation/DynamicBreadcrumb";
@@ -43,7 +43,7 @@ export default function Layout() {
                         <DynamicBreadcrumb />
                     </div>
                     <div className="w-full md:w-[60%] max-w-[500px] flex flex-row gap-2 justify-end align-center px-4">
-                        <CommandMenu />
+                        <SearchMenu />
                         <div className="flex flex-row gap-2 align-center justify-center text-black dark:text-white w-fit">
                             <ModeToggle />
                             <RightSidebarTrigger
