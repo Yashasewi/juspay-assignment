@@ -68,7 +68,7 @@ const Activities = () => {
                     <SidebarMenuItem key={activity.id} className="relative">
                         <SidebarMenuButton
                             size="lg"
-                            className="flex items-start gap-3 py-4"
+                            className="flex justify-center items-center gap-3 py-4"
                         >
                             <div className="relative flex-shrink-0">
                                 <Avatar className="size-8 relative z-10">
