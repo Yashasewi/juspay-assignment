@@ -9,13 +9,12 @@ import { Sidebar, SidebarContent, SidebarRail } from "@/components/ui/sidebar";
 
 export default function RightSidebar({ ...props }) {
     return (
-        <Sidebar collapsible="offcanvas" side="right" {...props}>
+        <Sidebar collapsible="offcanvas" side="right" variant="inset" {...props}>
             <SidebarContent>
                 <Notification />
                 <Activities />
                 <Contacts />
             </SidebarContent>
-            <SidebarRail />
         </Sidebar>
     );
 }

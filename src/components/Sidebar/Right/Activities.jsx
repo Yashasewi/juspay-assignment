@@ -7,6 +7,7 @@ import {
     SidebarMenuButton,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 import avatar1 from "@/assets/avatars/avatar-1.png";
 import avatar2 from "@/assets/avatars/avatar-2.png";
 import avatar3 from "@/assets/avatars/avatar-3.png";
@@ -59,23 +60,34 @@ const activitiesData = [
 const Activities = () => {
     return (
         <SidebarGroup>
-            <SidebarGroupLabel>Activities</SidebarGroupLabel>
-            <SidebarMenu>
-                {activitiesData.map((activity) => (
-                    <SidebarMenuItem key={activity.id}>
+            <SidebarGroupLabel className="font-semibold text-sm mb-2">
+                Activities
+            </SidebarGroupLabel>
+            <SidebarMenu className="gap-0">
+                {activitiesData.map((activity, index) => (
+                    <SidebarMenuItem key={activity.id} className="relative">
                         <SidebarMenuButton
                             size="lg"
-                            className="flex items-start gap-3"
+                            className="flex items-start gap-3 py-4"
                         >
-                            <Avatar className="w-6 h-6 flex-shrink-0">
-                                <AvatarImage
-                                    src={activity.avatar}
-                                    alt={activity.name}
-                                />
-                                <AvatarFallback className="text-xs">
-                                    {activity.fallback}
-                                </AvatarFallback>
-                            </Avatar>
+                            <div className="relative flex-shrink-0">
+                                <Avatar className="size-8 relative z-10">
+                                    <AvatarImage
+                                        src={activity.avatar}
+                                        alt={activity.name}
+                                    />
+                                    <AvatarFallback className="text-xs">
+                                        {activity.fallback}
+                                    </AvatarFallback>
+                                </Avatar>
+                                {/* Vertical line connecting avatars */}
+                                {index < activitiesData.length - 1 && (
+                                    <Separator
+                                        orientation="vertical"
+                                        className="absolute left-4 top-8 h-10 w-px bg-border/60 z-0"
+                                    />
+                                )}
+                            </div>
                             <div className="flex-1 min-w-0">
                                 <div className="text-sm text-sidebar-foreground leading-tight truncate">
                                     {activity.activity}

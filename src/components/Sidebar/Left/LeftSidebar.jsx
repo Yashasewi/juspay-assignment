@@ -45,13 +45,12 @@ const data = {
     dashboards: [
         {
             title: "Default",
-            url: "#",
+            url: "/",
             icon: BarChart3,
             isActive: true,
         },
         {
             title: "eCommerce",
-            url: "#",
             icon: ShoppingCart,
             items: [
                 {
@@ -60,13 +59,12 @@ const data = {
                 },
                 {
                     title: "Orders",
-                    url: "#",
+                    url: "/orders",
                 },
             ],
         },
         {
             title: "Projects",
-            url: "#",
             icon: FolderOpen,
             items: [
                 {
@@ -81,7 +79,6 @@ const data = {
         },
         {
             title: "Online Courses",
-            url: "#",
             icon: GraduationCap,
             items: [
                 {
@@ -98,7 +95,6 @@ const data = {
     pages: [
         {
             title: "User Profile",
-            url: "#",
             icon: Users,
             items: [
                 {
@@ -125,7 +121,6 @@ const data = {
         },
         {
             title: "Account",
-            url: "#",
             icon: Settings2,
             items: [
                 {
@@ -140,7 +135,6 @@ const data = {
         },
         {
             title: "Corporate",
-            url: "#",
             icon: Building2,
             items: [
                 {
@@ -155,7 +149,6 @@ const data = {
         },
         {
             title: "Blog",
-            url: "#",
             icon: FileText,
             items: [
                 {
@@ -170,7 +163,6 @@ const data = {
         },
         {
             title: "Social",
-            url: "#",
             icon: MessageSquare,
             items: [
                 {
@@ -196,7 +188,7 @@ const data = {
     ],
 };
 
-export function AppSidebar({ ...props }) {
+export default function LeftSidebar({ ...props }) {
     return (
         <Sidebar collapsible="icon" {...props}>
             <SidebarHeader>

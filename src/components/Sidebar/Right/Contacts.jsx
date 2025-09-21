@@ -56,12 +56,12 @@ const contactsData = [
 const Contacts = () => {
     return (
         <SidebarGroup>
-            <SidebarGroupLabel>Contacts</SidebarGroupLabel>
-            <SidebarMenu>
+            <SidebarGroupLabel className="font-semibold text-sm mb-2">Contacts</SidebarGroupLabel>
+            <SidebarMenu className="gap-2">
                 {contactsData.map((contact) => (
                     <SidebarMenuItem key={contact.id}>
                         <SidebarMenuButton className="flex items-center gap-3">
-                            <Avatar className="w-6 h-6 flex-shrink-0">
+                            <Avatar className="size-8 flex-shrink-0">
                                 <AvatarImage
                                     src={contact.avatar}
                                     alt={contact.name}

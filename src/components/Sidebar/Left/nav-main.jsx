@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import {
     Collapsible,
@@ -46,7 +47,13 @@ export function NavMain({ items, title = "Platform" }) {
                                             data-sidebar-item-icon
                                         />
                                     )}
-                                    <span>{item.title}</span>
+                                    {item.url ? (
+                                        <Link to={item.url}>
+                                            <span>{item.title}</span>
+                                        </Link>
+                                    ) : (
+                                        <span>{item.title}</span>
+                                    )}
                                 </SidebarMenuButton>
                             </CollapsibleTrigger>
                             {item.items ? (
@@ -57,11 +64,11 @@ export function NavMain({ items, title = "Platform" }) {
                                                 key={subItem.title}
                                             >
                                                 <SidebarMenuSubButton asChild>
-                                                    <a href={subItem.url}>
+                                                    <Link to={subItem.url}>
                                                         <span>
                                                             {subItem.title}
                                                         </span>
-                                                    </a>
+                                                    </Link>
                                                 </SidebarMenuSubButton>
                                             </SidebarMenuSubItem>
                                         ))}

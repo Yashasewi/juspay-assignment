@@ -46,15 +46,15 @@ const notificationsData = [
 const Notification = () => {
     return (
         <SidebarGroup>
-            <SidebarGroupLabel className="font-medium">Notifications</SidebarGroupLabel>
-            <SidebarMenu>
+            <SidebarGroupLabel className="font-semibold text-sm mb-2">Notifications</SidebarGroupLabel>
+            <SidebarMenu className="gap-2">
                 {notificationsData.map((notification) => {
                     const IconComponent = notification.icon;
                     return (
                         <SidebarMenuItem key={notification.id}>
                             <SidebarMenuButton
                                 size="lg"
-                                className="flex items-start gap-3"
+                                className="flex items-start gap-4"
                             >
                                 <div
                                     className={`flex items-center justify-center w-8 h-8 rounded-lg ${notification.bgColor} flex-shrink-0`}
